@@ -1,0 +1,9 @@
+D:\Study\GitHub\HybridCLRFramework\Server\src\Fleck\bin\Debug\net45\Fleck.dll
+D:\Study\GitHub\HybridCLRFramework\Server\src\Fleck\bin\Debug\net45\Fleck.pdb
+D:\Study\GitHub\HybridCLRFramework\Server\src\Fleck\obj\Debug\net45\Fleck.AssemblyInfoInputs.cache
+D:\Study\GitHub\HybridCLRFramework\Server\src\Fleck\obj\Debug\net45\Fleck.AssemblyInfo.cs
+D:\Study\GitHub\HybridCLRFramework\Server\src\Fleck\obj\Debug\net45\Fleck.dll
+D:\Study\GitHub\HybridCLRFramework\Server\src\Fleck\obj\Debug\net45\Fleck.pdb
+D:\Study\GitHub\HybridCLRFramework\Server\src\Fleck\obj\Debug\net45\Fleck.csproj.AssemblyReference.cache
+D:\Study\GitHub\HybridCLRFramework\Server\src\Fleck\obj\Debug\net45\Fleck.GeneratedMSBuildEditorConfig.editorconfig
+D:\Study\GitHub\HybridCLRFramework\Server\src\Fleck\obj\Debug\net45\Fleck.csproj.CoreCompileInputs.cache

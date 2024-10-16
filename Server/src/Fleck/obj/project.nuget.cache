@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "kME/VkHpJxblSBoUgjN5IBaMKEX3nb9eVz8LAUH6tU2zG7qqa3gPlzcDW4/tfZF3H2bMgBxjvF64gkiZurAtvw==",
+  "success": true,
+  "projectFilePath": "D:\\Study\\GitHub\\HybridCLRFramework\\Server\\src\\Fleck\\Fleck.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\12132\\.nuget\\packages\\microsoft.netcore.app\\2.0.0\\microsoft.netcore.app.2.0.0.nupkg.sha512",
+    "C:\\Users\\12132\\.nuget\\packages\\microsoft.netcore.dotnetapphost\\2.0.0\\microsoft.netcore.dotnetapphost.2.0.0.nupkg.sha512",
+    "C:\\Users\\12132\\.nuget\\packages\\microsoft.netcore.dotnethostpolicy\\2.0.0\\microsoft.netcore.dotnethostpolicy.2.0.0.nupkg.sha512",
+    "C:\\Users\\12132\\.nuget\\packages\\microsoft.netcore.dotnethostresolver\\2.0.0\\microsoft.netcore.dotnethostresolver.2.0.0.nupkg.sha512",
+    "C:\\Users\\12132\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\12132\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
