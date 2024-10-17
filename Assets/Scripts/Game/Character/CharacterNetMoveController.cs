@@ -13,7 +13,7 @@ namespace ActDemo
 
     public class CharacterNetMoveController : MonoBehaviour
     {
-        private Character _Character;
+        //private Character _Character;
         private Vector3 _lastPos;
         private Vector3 _lastRot;
         private bool isMove = false; //遥感是否有位移
@@ -28,7 +28,7 @@ namespace ActDemo
         private bool moveJumpFlag = false;
         private void Awake()
         {
-            _Character = GetComponent<Character>();
+            //_Character = GetComponent<Character>();
         }
         void Start()
         {
@@ -37,16 +37,16 @@ namespace ActDemo
 
         void RegisterEvents()
         {
-            _Character.IsGroundedEvent += OnGrounded;
-            _Character.BeginJumpEvent += OnJump;
-            _Character.MoveEvent += OnMove;
+            //_Character.IsGroundedEvent += OnGrounded;
+            //_Character.BeginJumpEvent += OnJump;
+            //_Character.MoveEvent += OnMove;
         }
 
         void UnRegisterEvents()
         {
-            _Character.IsGroundedEvent -= OnGrounded;
-            _Character.BeginJumpEvent -= OnJump;
-            _Character.MoveEvent -= OnMove;
+            //_Character.IsGroundedEvent -= OnGrounded;
+            //_Character.BeginJumpEvent -= OnJump;
+            //_Character.MoveEvent -= OnMove;
         }
 
         void OnGrounded()

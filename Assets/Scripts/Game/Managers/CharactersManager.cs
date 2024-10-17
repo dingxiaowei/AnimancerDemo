@@ -131,10 +131,10 @@ namespace ActDemo
                 }
                 var charMoveController = go.AddComponent<CharacterNetMoveController>();
                 var characterController = go.transform.GetComponent<Character>();
-                ActDemoLoader.Instance.CameraFollow.target = go.transform;
-                var myPlayer = new MyPlayer(characterController, charMoveController, uid, go, request);
-                mainPlayer = myPlayer;
-                //PlayersMap.Add(uid, myPlayer);
+                //ActDemoLoader.Instance.CameraFollow.target = go.transform;
+                //var myPlayer = new MyPlayer(characterController, charMoveController, uid, go, request);
+                //mainPlayer = myPlayer;
+
                 OnMainPlayerLoadedEvent?.Invoke(characterController);
                 OnPlaerLoaded?.Invoke(userStateInfo.UserInfo.UserId);
                 mainPlayer.SetId(userStateInfo.UserInfo.UserId);
@@ -144,65 +144,65 @@ namespace ActDemo
         void OnMainPlayerLoaded(Character character)
         {
             //如果pico的事件改变  则改变输入的值
-            XRInputManager.Instance.OnRightPrimary2DAxisValueEvent += On2DAxisValueChange;
-            JoyStickMove.Instance.onMoving += On2DAxisValueChange;
-            JoyStickMove.Instance.onMoveEnd += On2DAxisValueStop;
-            XRInputManager.Instance.OnAButtonDown += OnJump;
-            XRInputManager.Instance.OnAButtonUp += OnJumpReset;
+            //XRInputManager.Instance.OnRightPrimary2DAxisValueEvent += On2DAxisValueChange;
+            //JoyStickMove.Instance.onMoving += On2DAxisValueChange;
+            //JoyStickMove.Instance.onMoveEnd += On2DAxisValueStop;
+            //XRInputManager.Instance.OnAButtonDown += OnJump;
+            //XRInputManager.Instance.OnAButtonUp += OnJumpReset;
 
-            XRInputManager.Instance.OnBButtonDown += () => { VoiceManager.Instance.BeginRecord(); };
-            XRInputManager.Instance.OnBButtonUp += () =>
-            {
-                VoiceManager.Instance.StopRecord();
-                //VoiceManager.Instance.PlayRecord();
-                var msg = new Protoc.BroadCastVoice();
-                msg.Voice = VoiceManager.Instance.AudioClipByteString;
-                //NetworkManager.Instance.SendMsg<Protoc.BroadCastVoice>(msg);
-                NetworkManager.Instance.SendMsg((int)Protoc.OuterOpcode.BroadCastVoice, msg);
-            };
+            //XRInputManager.Instance.OnBButtonDown += () => { VoiceManager.Instance.BeginRecord(); };
+            //XRInputManager.Instance.OnBButtonUp += () =>
+            //{
+            //    VoiceManager.Instance.StopRecord();
+            //    //VoiceManager.Instance.PlayRecord();
+            //    var msg = new Protoc.BroadCastVoice();
+            //    msg.Voice = VoiceManager.Instance.AudioClipByteString;
+            //    //NetworkManager.Instance.SendMsg<Protoc.BroadCastVoice>(msg);
+            //    NetworkManager.Instance.SendMsg((int)Protoc.OuterOpcode.BroadCastVoice, msg);
+            //};
         }
 
         void On2DAxisValueChange(Vector2 value)
         {
-            if (mainPlayer.Character)
-            {
-                (mainPlayer.Character.CharacterInput as CharacterInputs).keyCodeCharacterInput.FirstHorizontal = value.x;
-                (mainPlayer.Character.CharacterInput as CharacterInputs).keyCodeCharacterInput.FristVertical = value.y;
-            }
+            //if (mainPlayer.Character)
+            //{
+            //    (mainPlayer.Character.CharacterInput as CharacterInputs).keyCodeCharacterInput.FirstHorizontal = value.x;
+            //    (mainPlayer.Character.CharacterInput as CharacterInputs).keyCodeCharacterInput.FristVertical = value.y;
+            //}
         }
 
         void On2DAxisValueStop()
         {
-            if (mainPlayer.Character)
-            {
-                (mainPlayer.Character.CharacterInput as CharacterInputs).keyCodeCharacterInput.FirstHorizontal = 0;
-                (mainPlayer.Character.CharacterInput as CharacterInputs).keyCodeCharacterInput.FristVertical = 0;
-            }
+            //if (mainPlayer.Character)
+            //{
+            //    (mainPlayer.Character.CharacterInput as CharacterInputs).keyCodeCharacterInput.FirstHorizontal = 0;
+            //    (mainPlayer.Character.CharacterInput as CharacterInputs).keyCodeCharacterInput.FristVertical = 0;
+            //}
         }
 
         void OnJump()
         {
-            if (mainPlayer.Character)
-            {
-                (mainPlayer.Character.CharacterInput as CharacterInputs).keyCodeCharacterInput.FirstJump = true;
-            }
+            //if (mainPlayer.Character)
+            //{
+            //    (mainPlayer.Character.CharacterInput as CharacterInputs).keyCodeCharacterInput.FirstJump = true;
+            //}
         }
 
         void OnJumpReset()
         {
-            if (mainPlayer.Character)
-            {
-                (mainPlayer.Character.CharacterInput as CharacterInputs).keyCodeCharacterInput.FirstJump = false;
-            }
+            //if (mainPlayer.Character)
+            //{
+            //    (mainPlayer.Character.CharacterInput as CharacterInputs).keyCodeCharacterInput.FirstJump = false;
+            //}
         }
 
         public override void OnDestroy()
         {
             base.OnDestroy();
             OnMainPlayerLoadedEvent -= OnMainPlayerLoaded;
-            JoyStickMove.Instance.onMoving -= On2DAxisValueChange;
-            XRInputManager.Instance.OnRightPrimary2DAxisValueEvent -= On2DAxisValueChange;
-            JoyStickMove.Instance.onMoveEnd -= On2DAxisValueStop;
+            //JoyStickMove.Instance.onMoving -= On2DAxisValueChange;
+            //XRInputManager.Instance.OnRightPrimary2DAxisValueEvent -= On2DAxisValueChange;
+            //JoyStickMove.Instance.onMoveEnd -= On2DAxisValueStop;
             UnRegisterEvents();
         }
 

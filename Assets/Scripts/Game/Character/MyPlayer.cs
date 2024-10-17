@@ -13,12 +13,17 @@ namespace ActDemo
         private CharacterNetMoveController charMoveController;
         public CharacterNetMoveController CharMoveController { get { return CharMoveController; } }
 
-        private Character character;
-        public Character Character { get { return character; } }
-        public MyPlayer(Character character, CharacterNetMoveController controller, int uid, GameObject obj, AssetRequest request) : base(uid, obj, request)
+        //private Character character;
+        //public Character Character { get { return character; } }
+        //public MyPlayer(Character character, CharacterNetMoveController controller, int uid, GameObject obj, AssetRequest request) : base(uid, obj, request)
+        //{
+        //    this.charMoveController = controller;
+        //    this.character = character;
+        //}
+
+        public MyPlayer(int uid, GameObject obj, AssetRequest request) : base(uid, obj, request)
         {
-            this.charMoveController = controller;
-            this.character = character;
+
         }
     }
 }

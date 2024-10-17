@@ -114,22 +114,22 @@ public class AutoRegister : MonoBehaviour
         StopBtn.onClick.AddListener(Stop);
         PlayBtn.onClick.AddListener(Player);
 
-        OnReceiveVoiceMsg = (voice) =>
-        {
-            if (voice != null && voice.Length > 0)
-            {
-                if (!Microphone.IsRecording(null))
-                {
-                    audioSource.clip = WavUtility.ToAudioClip(voice);
-                    audioSource.Play();
-                    Infotxt.text = "正在播放录音！";
-                }
-                else
-                {
-                    Infotxt.text = "正在录音中，请先停止录音！";
-                }
-            }
-        };
+        //OnReceiveVoiceMsg = (voice) =>
+        //{
+        //    if (voice != null && voice.Length > 0)
+        //    {
+        //        if (!Microphone.IsRecording(null))
+        //        {
+        //            audioSource.clip = WavUtility.ToAudioClip(voice);
+        //            audioSource.Play();
+        //            Infotxt.text = "正在播放录音！";
+        //        }
+        //        else
+        //        {
+        //            Infotxt.text = "正在录音中，请先停止录音！";
+        //        }
+        //    }
+        //};
     }
 
     private void OnGUI()
@@ -165,16 +165,16 @@ public class AutoRegister : MonoBehaviour
             List<Protoc.UnitInfo> unitInfos = new List<UnitInfo>();
             unitInfos.Add(new UnitInfo() { UnitId = 222, X = 1, Y = 1, Z = 1 });
             msg.Units.AddRange(unitInfos);
-            if (RecordedClip != null)
-            {
-                byte[] rclip = WavUtility.FromAudioClip(RecordedClip);
-                msg.Voice = Google.Protobuf.ByteString.CopyFrom(rclip);
-                Debug.Log($"发送语音消息的长度:{rclip.Length}");
-            }
-            else
-            {
-                msg.Voice = Google.Protobuf.ByteString.Empty;
-            }
+            //if (RecordedClip != null)
+            //{
+            //    byte[] rclip = WavUtility.FromAudioClip(RecordedClip);
+            //    msg.Voice = Google.Protobuf.ByteString.CopyFrom(rclip);
+            //    Debug.Log($"发送语音消息的长度:{rclip.Length}");
+            //}
+            //else
+            //{
+            //    msg.Voice = Google.Protobuf.ByteString.Empty;
+            //}
             socketSession.SendAsync((int)OuterOpcode.S2C_EnterMapResponse, msg);
         }
         

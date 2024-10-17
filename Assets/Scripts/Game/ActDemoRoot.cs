@@ -28,7 +28,7 @@ public class ActDemoRoot : MonoBehaviour
         mMgrList.Add(SystemEventManager.Instance);
         mMgrList.Add(ActGameManager.Instance);
         mMgrList.Add(CharactersManager.Instance);
-        mMgrList.Add(VoiceManager.Instance);
+        //mMgrList.Add(VoiceManager.Instance);
         mMgrList.Add(NetworkManager.Instance);
     }
 
@@ -66,28 +66,28 @@ public class ActDemoRoot : MonoBehaviour
             List<Protoc.UnitInfo> unitInfos = new List<UnitInfo>();
             unitInfos.Add(new UnitInfo() { UnitId = 222, X = 1, Y = 1, Z = 1 });
             msg.Units.AddRange(unitInfos);
-            msg.Voice = VoiceManager.Instance.AudioClipByteString;
+            //msg.Voice = VoiceManager.Instance.AudioClipByteString;
             NetworkManager.Instance.SendMsg((int)OuterOpcode.S2C_EnterMapResponse, msg);
         }
-        if (GUI.Button(new Rect(210, 10, 150, 50), "开始录音"))
-        {
-            VoiceManager.Instance.BeginRecord();
-        }
-        if (GUI.Button(new Rect(210, 100, 150, 50), "停止录音"))
-        {
-            VoiceManager.Instance.StopRecord();
-        }
-        if (GUI.Button(new Rect(210, 190, 150, 50), "播放录音"))
-        {
-            VoiceManager.Instance.PlayRecord();
-        }
-        if (GUI.Button(new Rect(210, 270, 150, 50), "发送录音"))
-        {
-            var msg = new BroadCastVoice();
-            msg.Voice = VoiceManager.Instance.AudioClipByteString;
-            //NetworkManager.Instance.SendMsg<BroadCastVoice>(msg);
-            NetworkManager.Instance.SendMsg((int)OuterOpcode.BroadCastVoice, msg);
-        }
+        //if (GUI.Button(new Rect(210, 10, 150, 50), "开始录音"))
+        //{
+        //    VoiceManager.Instance.BeginRecord();
+        //}
+        //if (GUI.Button(new Rect(210, 100, 150, 50), "停止录音"))
+        //{
+        //    VoiceManager.Instance.StopRecord();
+        //}
+        //if (GUI.Button(new Rect(210, 190, 150, 50), "播放录音"))
+        //{
+        //    VoiceManager.Instance.PlayRecord();
+        //}
+        //if (GUI.Button(new Rect(210, 270, 150, 50), "发送录音"))
+        //{
+        //    var msg = new BroadCastVoice();
+        //    msg.Voice = VoiceManager.Instance.AudioClipByteString;
+        //    //NetworkManager.Instance.SendMsg<BroadCastVoice>(msg);
+        //    NetworkManager.Instance.SendMsg((int)OuterOpcode.BroadCastVoice, msg);
+        //}
     }
 
     private void Update()
